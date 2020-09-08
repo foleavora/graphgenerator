@@ -1,0 +1,27 @@
+c read Graph
+c width = 3375
+c time = 25984 ms
+c width = 47
+c time = 30148 ms
+c width = 45
+c time = 46862 ms
+c width = 43
+c time = 47570 ms
+c width = 41
+c time = 88681 ms
+c width = 39
+c time = 102958 ms
+c width = 37
+c time = 137615 ms
+c width = 36
+c time = 214209 ms
+c width = 35
+c time = 217460 ms
+c width = 34
+c time = 481137 ms
+c width = 33
+c time = 482025 ms
+c width = 32
+c time = 1998793 ms
+c width = 31
+c time = 2023136 ms

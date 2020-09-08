@@ -1,0 +1,15 @@
+#!/usr/local_rwth/bin/zsh
+### SBATCH Commands
+#SBATCH --job-name=Wallexactlsc
+#SBATCH --output=/home/ns745279/rumrechnen/final/output.%J.txt
+#SBATCH --time=1-00:00:00
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=48G
+
+###Programm
+for i in {2..20}
+do
+ echo wall$i
+# time ./tw-heuristic -s 4321 < $file.gr > $file.td
+ time JAVA_TOOL_OPTIONS="-Xmx48g -Xms48g -Xss30m" ./tw-exact -s 4321 < walls/wall$i.gr > walls/wall$i.td
+done

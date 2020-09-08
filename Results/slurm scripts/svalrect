@@ -1,0 +1,15 @@
+#!/usr/local_rwth/bin/zsh
+### SBATCH Commands
+#SBATCH --job-name=Rectexactlsc
+#SBATCH --output=/home/ns745279/rumrechnen/final/output.%J.txt
+#SBATCH --time=1-00:00:00
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=48G
+
+###Programm
+for f in rectangles/grid{3..20}x*.gr
+do
+ echo $f
+# time ./tw-heuristic -s 4321 < rectangles/$f.gr > $file.td
+ time JAVA_TOOL_OPTIONS="-Xmx48g -Xms48g -Xss10m" ./tw-exact -s 4321 < $f > $f.td
+done

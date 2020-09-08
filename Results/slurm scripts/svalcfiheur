@@ -1,0 +1,16 @@
+#!/usr/local_rwth/bin/zsh
+### SBATCH Commands
+#SBATCH --job-name=CFIGridheurlsc
+#SBATCH --output=/home/ns745279/rumrechnen/final/output.%J.txt
+#SBATCH --time=10:00:00
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=12G
+
+###Programm
+#for i in {2..20}
+#do
+i=15
+echo cfigrid$i
+# time ./tw-heuristic -s 4321 < $file.gr > $file.td
+time JAVA_TOOL_OPTIONS="-Xmx12g -Xms12g -Xss10m" ./tw-heuristic -s 4321 < cfigrid/cfigrid$i.gr > cfigrid/cfigridheur$i.td
+#done
